@@ -23,28 +23,28 @@ while(opcion != 3):
                 empleados[codigo]["departamento"] = input("Ingresar departamento: ")
                 empleados[codigo]["años"] = int(input("Ingrese los años de antiguedad"))
                 empleados[codigo]["Contacto"] = {}
-                empleados[codigo]["Contacto"]["telefono"] = int(input("Ingrese el telefono del empleado: "))
+                empleados[codigo]['Contacto']["telefono"] = int(input("Ingrese el telefono del empleado: "))
                 empleados[codigo]["Contacto"]["correo"] = input("Ingrese la correo del empleado: ")
                 empleados[codigo]["Calificacion"] = {}
-                empleados[codigo]["puntualidad"] = int(input("Ingrese la calificacion del empleado del 1 al 10"))
-                empleados[codigo]["trabajo"] = int(input("Ingrese la calificacion del trabajo en equipo"))
-                empleados[codigo]["productividad"] = int(input("Ingrese la calificacion de la productividad"))
-                empleados[codigo]["observaciones"] = input("Ingrese alguna observacion general")
+                empleados[codigo]['puntualidad'] = int(input("Ingrese la calificacion del empleado del 1 al 10"))
+                empleados[codigo]['trabajo'] = int(input("Ingrese la calificacion del trabajo en equipo"))
+                empleados[codigo]['productividad'] = int(input("Ingrese la calificacion de la productividad"))
+                empleados[codigo]['observaciones'] = input("Ingrese alguna observacion general")
                 print("Trabajador guardado exitosamente")
 
         case 2:
             print("Mostrar empleados")
-            for (codigo, empleado) in empleados.items():
+            for codigo, empleado in empleados.items():
                 print(f"\n Codigo del Empleado {[codigo]}")
                 print(f"Nombre del Empleado {empleado['nombre']}")
                 print(f"Departamento del Empleado {empleado['departamento']}")
                 print(f"Años de antiguedad del empleado {empleado ['años']}")
-            for codigo, calificacion in empleado["Calificacion"].items():
-                promedio = (calificacion["puntualidad"] + calificacion["trabajo"] + calificacion["productividad"]) / 3
-
-
-
-
+                for codigo, calificacion in empleado["Calificacion"].items():
+                    promedio = (calificacion["puntualidad"] + calificacion["trabajo"] + calificacion["productividad"]) / 3
+                    print(f"\n Promedio {promedio}")
+                    int(f"     Calificacion Puntualidad: {calificacion['puntualidad']}")
+                    int(f"     Calificacion Trabajo: {calificacion['trabajo']}")
+                    int(f"     Calificacion Productividad: {calificacion['productividad']}")
 
 
 
