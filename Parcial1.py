@@ -15,35 +15,41 @@ while(opcion != 3):
             print("Ingresar datos de empleados")
             cantidad = int(input("Ingrese la cantidad de empleados que deseea guardar: "))
             for i in range(cantidad):
+
                 print(f"Ingrese los datos del trabajador {i+1}")
                 codigo = input("Ingrese el codigo del empleado")
-                nombre = input("Ingresar nombre de empleado: ")
-                departamento = input("Ingresar departamento: ")
-                años = int(input("Ingrese los años de antiguedad"))
-                telefono = int(input("Ingrese el telefono del empleado: "))
-                correo = input("Ingrese la correo del empleado: ")
-                puntualidad = int(input("Ingrese la calificacion del empleado del 1 al 10"))
-                trabajo = int(input("Ingrese la calificacion del trabajo en equipo"))
-                productividad = int(input("Ingrese la calificacion de la productividad"))
-                observaciones = input("Ingrese alguna observacion general")
+                empleados[codigo] = {}
+                empleados[codigo]["nombre"]= input("Ingresar nombre de empleado: ")
+                empleados[codigo]["departamento"] = input("Ingresar departamento: ")
+                empleados[codigo]["años"] = int(input("Ingrese los años de antiguedad"))
+                empleados[codigo]["Contacto"] = {}
+                empleados[codigo]["Contacto"]["telefono"] = int(input("Ingrese el telefono del empleado: "))
+                empleados[codigo]["Contacto"]["correo"] = input("Ingrese la correo del empleado: ")
+                empleados[codigo]["Calificacion"] = {}
+                empleados[codigo]["puntualidad"] = int(input("Ingrese la calificacion del empleado del 1 al 10"))
+                empleados[codigo]["trabajo"] = int(input("Ingrese la calificacion del trabajo en equipo"))
+                empleados[codigo]["productividad"] = int(input("Ingrese la calificacion de la productividad"))
+                empleados[codigo]["observaciones"] = input("Ingrese alguna observacion general")
                 print("Trabajador guardado exitosamente")
 
-            empleados[codigo] = {
-                "nombre": nombre,
-                "departamento": departamento,
-                "años" : años,
-                "Evaluacion" : {
-                    "puntualidad": puntualidad,
-                    "trabajo": trabajo,
-                    "productividad": productividad,
-                    "observaciones": observaciones,
-                    "Contacto": {
-                        "telefono": telefono,
-                        "correo": correo,
-                    }
-                }
-            }
         case 2:
+            print("Mostrar empleados")
+            for (codigo, empleado) in empleados.items():
+                print(f"\n Codigo del Empleado {[codigo]}")
+                print(f"Nombre del Empleado {empleado['nombre']}")
+                print(f"Departamento del Empleado {empleado['departamento']}")
+                print(f"Años de antiguedad del empleado {empleado ['años']}")
+            for codigo, calificacion in empleado["Calificacion"].items():
+                promedio = (calificacion["puntualidad"] + calificacion["trabajo"] + calificacion["productividad"]) / 3
+
+
+
+
+
+
+
+
+
 
 
 
