@@ -15,7 +15,8 @@ while(opcion != 3):
             print("Ingresar datos de empleados")
             cantidad = int(input("Ingrese la cantidad de empleados que deseea guardar: "))
             for i in range(cantidad):
-                codigo = int(input("Ingrese el codigo del empleado"))
+                print(f"Ingrese los datos del trabajador {i+1}")
+                codigo = input("Ingrese el codigo del empleado")
                 nombre = input("Ingresar nombre de empleado: ")
                 departamento = input("Ingresar departamento: ")
                 años = int(input("Ingrese los años de antiguedad"))
@@ -24,6 +25,25 @@ while(opcion != 3):
                 puntualidad = int(input("Ingrese la calificacion del empleado del 1 al 10"))
                 trabajo = int(input("Ingrese la calificacion del trabajo en equipo"))
                 productividad = int(input("Ingrese la calificacion de la productividad"))
+                observaciones = input("Ingrese alguna observacion general")
+                print("Trabajador guardado exitosamente")
+
+            empleados[codigo] = {
+                "nombre": nombre,
+                "departamento": departamento,
+                "años" : años,
+                "Evaluacion" : {
+                    "puntualidad": puntualidad,
+                    "trabajo": trabajo,
+                    "productividad": productividad,
+                    "observaciones": observaciones,
+                    "Contacto": {
+                        "telefono": telefono,
+                        "correo": correo,
+                    }
+                }
+            }
+        case 2:
 
 
 
